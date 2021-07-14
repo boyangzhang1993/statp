@@ -9,6 +9,8 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
+import "./styles.css";
+
 
 export class Form2 extends Component {
     continue = e => {
@@ -24,9 +26,9 @@ export class Form2 extends Component {
       render() {
         const { values, handleChange } = this.props;
         return (
-          <Container>
-          <Row>
-            <Col><Image src="/p2.jpg" rounded thumbnail fluid /></Col>
+          <Container fluid>
+          
+            <Image src="/p2.jpg" className="photo" rounded fluid />
 
             
             <Col>2 of 3
@@ -72,7 +74,7 @@ export class Form2 extends Component {
 
         </div>
         </Col>
-        </Row>
+        
 
 
         </Container>

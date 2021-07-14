@@ -21,10 +21,9 @@ export class DetailsForm extends Component {
         return (
           <Container>
             <Row>
-              <Col><Image src="/p2.jpg" rounded thumbnail fluid /></Col>
-
+              <Image src="/p2.jpg" className="photo" rounded thumbnail fluid />
               
-              <Col>1 of 3
+              <br />
           <div>
             <>
                   <Form>
@@ -61,7 +60,7 @@ export class DetailsForm extends Component {
             </>
 
           </div>
-          </Col>
+          
           </Row>
 
 
