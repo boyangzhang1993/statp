@@ -10,7 +10,8 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
 import "./styles.css";
-
+import { Navbar, Nav, NavDropdown, Card, Jumbotron } from 'react-bootstrap';
+import FormTraditional from './FormTraditionalTesting'; 
 
 export class Form2 extends Component {
     continue = e => {
@@ -26,14 +27,14 @@ export class Form2 extends Component {
       render() {
         const { values, handleChange } = this.props;
         return (
-          <Container fluid>
-          
-            <Image src="/p2.jpg" className="photo" rounded fluid />
 
-            
-            <Col>2 of 3
+
+          <Container fluid>
         <div>
           <>
+
+
+
                 <Form>
                 <br />
                 <Form.Group controlId="Form.ControlSelect1">
@@ -73,13 +74,7 @@ export class Form2 extends Component {
           </>
 
         </div>
-        </Col>
-        
-
-
         </Container>
-
-
 
 
 
