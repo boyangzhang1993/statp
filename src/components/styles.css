@@ -1,4 +1,50 @@
 .photo {
-    height: 200px;
-    width: 200px;
-  }
+  height: 200px;
+  width: 200px;
+}
+
+.cards-list {
+  z-index: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.card {
+  margin: 30px auto;
+  width: 300px auto;
+  height: 300px auto;
+  border-radius: 20px;
+}
+
+.Card.Img {
+  width: inherit;
+  height: inherit;
+  border-radius: 20px;
+}
+
+.card .card_image img {
+  width: inherit;
+  height: inherit;
+  border-radius: 40px;
+  object-fit: cover;
+}
+
+.card .card_title {
+  text-align: center;
+  border-radius: 0px 0px 40px 40px;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: -80px;
+  height: 40px;
+}
+
+.title-white {
+  color: white;
+}
+
+.title-black {
+  color: black;
+}
