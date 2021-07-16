@@ -11,12 +11,46 @@ import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
 import { Navbar, Nav, NavDropdown, Card, Jumbotron } from 'react-bootstrap';
 import FormTraditional from './FormTraditionalTesting'; 
+import Alert from 'react-bootstrap/Alert'
+
+
+
 
 export class DetailsForm extends Component {
+
+
     continue = e => {
         e.preventDefault();
-        this.props.nextStep();
+        console.log(this.props.values);
+        // checkForValue(this.props.values, '');
+
+        // test1 = this.props.values;
+      //   for(propT in this.props.values) {
+      //     if(this.props.values[propT] === "") { console.log('bad') }
+      // }
+        // if (this.props.values.test1_variable_number ==''){
+        //   <Alert variant='primary'>
+        //   Oops, please fill the table
+        // </Alert>}
+
+        if (this.props.values.test1_variable_number ==''){alert("Oops, something you forget to choose?")
+      }else if (this.props.values.test1_sample_size =='') {alert("Oops, something you forget to choose?")
+
+      }else if (this.props.values.test1_data_collection ==''){alert("Oops, something you forget to choose?")
+
+      }else if (this.props.values.test1_out_come ==''){alert("Oops, something you forget to choose?")
+
+      }else{
+
+      };
+
+        
     }
+
+
+
+
+
     render() {
         const{ values, handleChange } = this.props;
         // this.props.values;
@@ -37,11 +71,20 @@ export class DetailsForm extends Component {
               <div>
 
 <>
+<br />
+    <Form.Group controlId="Form.ControlSelect3">
+      <h4>What is your outcome type?</h4>
+      <Form.Control as="select" onChange={handleChange('test1_out_come')}>
+        <option>Number</option>
+        <option>Category</option>
+        <option>Rank</option>
+      </Form.Control>
+    </Form.Group>
       <Form>
       <br />
       <Form.Group controlId="Form.ControlSelect1">
-        <h4 size="lg">How many variables do you have</h4>
-        <Form.Control as="select" size="lg" onChange={handleChange('firstName')}>
+        <h4>How many variables do you have</h4>
+        <Form.Control as="select" onChange={handleChange('test1_variable_number')}>
           <option>1-3</option>
           <option>4-10</option>
           <option>10-100</option>
@@ -51,7 +94,7 @@ export class DetailsForm extends Component {
       <br />
       <Form.Group controlId="Form.ControlSelect2">
         <h4>How many sample size do you have</h4>
-        <Form.Control as="select" size="lg" onChange={handleChange('lastName') }>
+        <Form.Control as="select" onChange={handleChange('test1_sample_size') }>
           <option>1-10</option>
           <option>10-20</option>
           <option>20-50</option>
@@ -62,19 +105,11 @@ export class DetailsForm extends Component {
 
       </Form.Group>
       
-    <br />
-    <Form.Group controlId="Form.ControlSelect3">
-      <h4 size="lg">How comfortable do you think about normality</h4>
-      <Form.Control as="select" size="lg" onChange={handleChange('firstName')}>
-        <option>Comfortable</option>
-        <option>Uncomfortable</option>
-        <option>Not sure</option>
-      </Form.Control>
-    </Form.Group>
+
     <br />
     <Form.Group controlId="Form.ControlSelect4">
       <h4>How did you collect data?</h4>
-      <Form.Control as="select" size="lg" onChange={handleChange('lastName') }>
+      <Form.Control as="select" onChange={handleChange('test1_data_collection') }>
         <option>Data were collected from a Experiment</option>
         <option>Data were collected from observersions such as survey.</option>
         <option>Not sure</option>
@@ -88,7 +123,6 @@ export class DetailsForm extends Component {
     <br />
     <Button
       variant="primary"
-      size="lg"
       onClick={this.continue}
     >Continue</Button>
 
