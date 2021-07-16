@@ -26,10 +26,10 @@ export class DetailsForm extends Component {
         return (
 
 
-            <Card style={{ width: '28rem' }}>
+            <Card style={{ width: '28rem' } } border="dark">
               {/* <Card.Img variant="top" src="https://picsum.photos/100/80" /> */}
               <Card.Body>
-                <Card.Title>Let's learn about your data</Card.Title>
+                <h2>2. Let's learn about your data</h2>
                 {/* <Card.Text>
                   Some quick example text to build on the card title and make up the bulk of
                   the card's content.
