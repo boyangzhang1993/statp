@@ -7,6 +7,9 @@ import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import CardGroup from 'react-bootstrap/CardGroup'
 import './styles.css'
+import NonParametric from './R_traditional_test/np'
+
+
 
 export class UserForm extends Component {
     state = {
@@ -66,7 +69,7 @@ export class UserForm extends Component {
         return(
             <div>
                 <Greeting isLoggedIn={isLoggedIn} />        
-                <ThirdCol isLoggedIn={isLoggedIn} /> 
+                
 
                 <Row xs={1} md={4} className="g-4">
                 <Col>
@@ -74,7 +77,8 @@ export class UserForm extends Component {
                 <Card style={{ width: '18rem' }} className = 'card' bg='dark' text = 'light'>
                 {/* <Card.Img variant="top" src="https://picsum.photos/100/80" /> */}
                 <Card.Body>
-                <h2> Instruction </h2>
+                <h2> 1. Instruction </h2>
+                <br />
                 <Card.Text>
                 <NewlineText text={'1. Fill the form on the left.\n2. Press Continue button.\n3. Select a recommended procedure.'} />
                         {/* 1. Fill the form on the left.
@@ -91,7 +95,9 @@ export class UserForm extends Component {
             handleontinue = {this.handleontinue}
             />
             </Col>
-                                    
+            <Col>
+            <ThirdCol isLoggedIn={isLoggedIn} /> 
+            </Col>                  
                                             
         </Row>
 
@@ -165,18 +171,10 @@ function NewlineText(props) {
         function RecommendedTest(props) {
             return (
                     <div>
-                    <Card style={{ width: '18rem' }}>
-                        <Card.Img variant="top" src="https://picsum.photos/100/80" />
-                        <Card.Body>
-                        <Card.Title> Instruction </Card.Title>
-                        <Card.Text>
-                        <NewlineText text={'1. Fill the form on the left.\n2. Press Continue button.\n3. Select a recommended procedure.'} />
-                                {/* 1. Fill the form on the left.
-                                2. Press Continue button.
-                                3. Select a recommended procedure. */}
-                        </Card.Text>
-                        </Card.Body>
-                    </Card>
+                        
+                        <div class="cards-list">
+                            <NonParametric />
+                        </div>
                     </div>);
           }
           

@@ -1,9 +1,6 @@
 import { Button, Container, Navbar, Nav, NavDropdown, Card, Row, Col, Jumbotron } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import Carousel from 'react-bootstrap/Carousel'
-
-
-import Carousel from "react-multi-carousel";
+import StatTest from './components/R_traditional_test/StatAll';
 import "react-multi-carousel/lib/styles.css";
 import "react-multi-carousel/lib/styles.css";
 
@@ -65,7 +62,8 @@ function Welcome() {
       
       <NavDropdown title="Features" id="collasible-nav-dropdown">
         <NavDropdown.Item href="/quickStat">Build your statistic by survey</NavDropdown.Item>
-        <NavDropdown.Item href="#action/3.2">Action2</NavDropdown.Item>
+        <NavDropdown.Item href="/st">Statistical Tests</NavDropdown.Item>
+        
         <NavDropdown.Item href="#action/3.3">Action3</NavDropdown.Item>
         <NavDropdown.Divider />
         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
@@ -86,6 +84,7 @@ function Welcome() {
       </Navbar>
       <Route exact path="/" component={Home} />
       <Route exact path="/about"  component={About} />
+      <Route exact path="/st"  component={StatTestPage} />
       <Route exact path="/contact"  component={Contact} />
       <Route exact path="/quickStat"  component={Survey} />
       </Router>
@@ -275,17 +274,10 @@ const Contact = () => (
   );
 
 const Survey = () => (
-  <div>
-    <h1>Test</h1>
-    <div><SurveyApp /></div>
-    
-    <h2>T3</h2>
-
-
-  </div>
-
-
-
-
+    <SurveyApp />
   )
+const StatTestPage = () => (
+  <StatTest />
+)
+
 export default App;
