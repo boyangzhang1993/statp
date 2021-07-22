@@ -138,7 +138,7 @@ function NewlineText(props) {
         <div >
             <h1>Welcome to Stat Pillow</h1>
             <p>
-            Fill the formin the center> Prcess continue > Select a procedure
+            Fill the formin the center > Prcess continue > Select a procedure
           </p>
           <hr/>
         </div>
@@ -171,7 +171,7 @@ function NewlineText(props) {
         function RecommendedTest(props) {
             return (
                     <div>
-                        
+
                         <div class="cards-list">
                             <NonParametric />
                         </div>
