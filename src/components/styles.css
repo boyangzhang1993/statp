@@ -59,3 +59,57 @@
 .title-black {
   color: black;
 }
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 123px;
+  font-size: 2em;
+  padding: 0.5em;
+  line-height: 1;
+  background-position: 0 0, 0 0, 100% 0, 0 100%;
+  background-size: 3px 100%, 100% 3px, 3px 100%, 100% 3px;
+  background-repeat: no-repeat;
+}
+
+.box-e {
+  background-image: linear-gradient(
+      0deg,
+      var(--clr-border),
+      var(--clr-border) 25%,
+      transparent 25%,
+      transparent 75%,
+      var(--clr-border) 75%
+    ),
+    // left
+    linear-gradient(
+        90deg,
+        var(--clr-border),
+        var(--clr-border) 25%,
+        transparent 25%,
+        transparent 75%,
+        var(--clr-border) 75%
+      ),
+    // top
+    linear-gradient(
+        180deg,
+        var(--clr-border),
+        var(--clr-border) 25%,
+        transparent 25%,
+        transparent 75%,
+        var(--clr-border) 75%
+      ),
+    // right
+    linear-gradient(
+        270deg,
+        var(--clr-border),
+        var(--clr-border) 25%,
+        transparent 25%,
+        transparent 75%,
+        var(--clr-border) 75%
+      )
+      // bottom
+;
+}

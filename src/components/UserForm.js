@@ -8,15 +8,18 @@ import Row from 'react-bootstrap/Row'
 import CardGroup from 'react-bootstrap/CardGroup'
 import './styles.css'
 import NonParametric from './R_traditional_test/np'
-
+import NonParametric2 from './R_traditional_test/np2'
+import PCA_test from './R_traditional_test/pcaR'
+import RNA from './R_traditional_test/RNA'
+import Box from '@material-ui/core/Box';
 
 
 export class UserForm extends Component {
     state = {
-        test1_variable_number:'Number',
-        test1_sample_size:'1-3',
-        test1_data_collection:'1-10',
-        test1_out_come:'Data were collected from a Experiment',
+        test1_variable_number:'1-3',
+        test1_sample_size:'1-10',
+        test1_data_collection:'Data were collected from a Experiment',
+        test1_out_come:'Number',
         isLoggedIn: false
     
     }
@@ -96,7 +99,9 @@ export class UserForm extends Component {
             />
             </Col>
             <Col>
-            <ThirdCol isLoggedIn={isLoggedIn} /> 
+            <ThirdCol isLoggedIn={isLoggedIn} test1_variable_number={test1_variable_number} test1_out_come={test1_out_come}/> 
+
+            
             </Col>                  
                                             
         </Row>
@@ -166,14 +171,65 @@ function NewlineText(props) {
 
       function ThirdCol(props) {
         const isLoggedIn = props.isLoggedIn;
-        if (isLoggedIn) { return <RecommendedTest />;}return <DefaultResult />;}
+        const test1_out_come = props.test1_out_come;
+        const test1_variable_number = props.test1_variable_number;
+        
+        if (isLoggedIn && (test1_out_come == "Category") && (test1_variable_number == "1-3")) { return <RecommendedTest_k_mean />;}
+        else if (isLoggedIn && (test1_out_come == "Rank")){return <RecommendedNon_test />;}
+        else if (isLoggedIn && (test1_out_come == "Category") && (test1_variable_number != "1-3")){return <RecommendedPCA_test />;}
+        else if (isLoggedIn && (test1_out_come == "RNA-Seq data")){return <RecommendedRNA_test />;}
+        else{return <DefaultResult />};
+        
+      
+      
+      }
 
-        function RecommendedTest(props) {
+        function RecommendedTest_k_mean(props) {
             return (
                     <div>
-
-                        <div class="cards-list">
+                        <br />
+                                            <p><br />
+                                            This is what we recommend for you
+                    </p>
+                        <div className="cards-list">
                             <NonParametric />
+                        </div>
+                    </div>);
+          }
+          function RecommendedNon_test(props) {
+            return (
+                    <div>
+                        <br />
+                                            <p><br />
+                                            This is what we recommend for you
+                    </p>
+                        <div className="cards-list">
+                            <NonParametric2 />
+                        </div>
+                    </div>);
+          }
+          function RecommendedPCA_test(props) {
+            return (
+                    <div>
+                        <br />
+                                            <p><br />
+                                            This is what we recommend for you
+                    </p>
+                        <div className="cards-list">
+                            <PCA_test />
+                        </div>
+                    </div>);
+          }
+          
+          function RecommendedRNA_test(props) {
+            return (
+                    <div>
+                        <br />
+                                            <p><br />
+                                            This is what we recommend for you
+                    </p>
+                        <div className="cards-list">
+                            <RNA />
                         </div>
                     </div>);
           }
@@ -183,7 +239,15 @@ function NewlineText(props) {
 
 
             return (
-                <div></div>
-
+                <div>
+                    <br /> <br /><br /><br />
+                    <br />
+                    <br />
+                    <p>
+                        Recommended procedures will be shown in here.
+                    </p>
+                    
+                </div>
             );
           }
+
