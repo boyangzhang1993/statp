@@ -43,6 +43,7 @@ export class DetailsForm extends Component {
                     <option>Number</option>
                     <option>Category</option>
                     <option>Rank</option>
+                    <option>RNA-Seq data</option>
                   </Form.Control>
                 </Form.Group>
                 <Form>

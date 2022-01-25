@@ -1,6 +1,9 @@
 import { Button, Container, Navbar, Nav, NavDropdown, Card, Row, Col, Jumbotron } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import StatTest from './components/R_traditional_test/StatAll';
+import StatTestNonP from './components/R_traditional_test/StatNonP';
+import PCA_test from './components/R_traditional_test/StatPCA';
+import StatTestRNA from './components/R_traditional_test/StatRNA';
 import "react-multi-carousel/lib/styles.css";
 import "react-multi-carousel/lib/styles.css";
 
@@ -62,11 +65,12 @@ function Welcome() {
       
       <NavDropdown title="Features" id="collasible-nav-dropdown">
         <NavDropdown.Item href="/quickStat">Build your statistic by survey</NavDropdown.Item>
-        <NavDropdown.Item href="/st">Statistical Tests</NavDropdown.Item>
-        
-        <NavDropdown.Item href="#action/3.3">Action3</NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+        <NavDropdown.Item href="/np">Non parametric test</NavDropdown.Item>
+        
+        <NavDropdown.Item href="/pca">Principal component analysis</NavDropdown.Item>
+        
+        <NavDropdown.Item href="/rna">Genavi (RNA-seq)</NavDropdown.Item>
       </NavDropdown>
     </Nav>
     
@@ -74,17 +78,21 @@ function Welcome() {
 
 
     <Nav>
-      <Nav.Link href="/contact">Contact me</Nav.Link>
+      {/* <Nav.Link href="/contact">Contact me</Nav.Link> */}
       <Nav.Link eventKey={2} href="/about">
-        About me
+        About
       </Nav.Link>
     </Nav>
     </Navbar.Collapse>
     
       </Navbar>
-      <Route exact path="/" component={Home} />
+      {/* <Route exact path="/" component={Home} /> */}
+      <Route exact path="/" component={Survey} />
       <Route exact path="/about"  component={About} />
       <Route exact path="/st"  component={StatTestPage} />
+      <Route exact path="/np"  component={StatNonP} />
+      <Route exact path="/pca"  component={StatPCA} />
+      <Route exact path="/rna"  component={StatRNA} />
       <Route exact path="/contact"  component={Contact} />
       <Route exact path="/quickStat"  component={Survey} />
       </Router>
@@ -263,7 +271,24 @@ const Home = () => (
   );
 // About Page
 const About = () => (
-<h1>about</h1>
+
+  <div>
+    <h1>About</h1>
+    <div> This React app use a simple survey and R shiny app to let user find a way to analyze their data. 
+    <br />
+      Currently statistical methods include: Principal component analysis (PCA), Non parametric test (sometimes called a distribution free test), and Genavi (RNA-seq). 
+      <br />
+      To contact me: 
+      <br />
+      Email: boyangzhangosu@gmail.com 
+      <br />
+      Linked: https://www.linkedin.com/in/boyang-zhang-9b479a1a8/
+    </div>
+
+
+  </div>
+
+
   );
 // Contact Page
 const Contact = () => (
@@ -280,4 +305,15 @@ const StatTestPage = () => (
   <StatTest />
 )
 
+const StatNonP = () => (
+  <StatTestNonP />
+)
+const StatPCA= () => (
+  <PCA_test />
+)
+
+
+const StatRNA= () => (
+  <StatTestRNA />
+)
 export default App;
